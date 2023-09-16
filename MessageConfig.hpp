@@ -20,13 +20,20 @@
 #define BUKHTAGRAM_MESSENGERCOMMON_MESSAGECONFIG_HPP
 
 #include <inttypes.h>
+#include <string>
 
 namespace bukhtagram {
+namespace message_config {
 
 const uint16_t MAX_MESSAGE_LENGTH = 2048;
-//                                                          sender + receiver     message type;
-const uint16_t STANDART_BUFFER_SIZE = MAX_MESSAGE_LENGTH + sizeof(uint64_t) * 2 + sizeof(uint8_t);
+//                                                       sender + receiver     message type;
+const uint16_t BASE_BUFFER_SIZE = MAX_MESSAGE_LENGTH + sizeof(uint64_t) * 2 + sizeof(uint8_t);
+const char MESSAGE_EOF = '\0';
+const wchar_t WMESSAGE_EOF = L'\0';
+const std::string EMPTY_STRING = "";
+const std::wstring EMPTY_WSTRING = L"";
 
+}   // !message_config;
 }   // !bukhtagram;
 
 #endif  // !BUKHTAGRAM_MESSENGERCOMMON_MESSAGECONFIG_HPP;
